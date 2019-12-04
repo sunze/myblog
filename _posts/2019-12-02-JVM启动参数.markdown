@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "java程序的调优和优化-JVM启动参数"
+date:   2019-12-02 20:58:43 +0800
+categories: jekyll update
+---
+
+#java程序的调优和优化-JVM启动参数
+
+java应启动，是通过启动JRE环境，加载指定的类，调用类的main函数，args的第一个参数通常是制定加载的类，或者如果-jar参数存在，就是JAR包的名称：
+
+    public static void main(String[] args)
+
+java命令参数支持许多种参数，可以分为一下几种类别：
+
+* 标准参数
+* 非标准参数
+* 高级运行时参数
+* 高级编译参数
+* 高级服务参数
+* 高级垃圾回收参数
+
+> 标准参数(是最经常使用的参数，所有的JVM实现都会支持)
+
+-verbose:jni 打印原声方法调用信息学
+-verbose:gc 打印gc信息
+-verbose:class 打印类信息
+-jar filename 执行jar包程序
+-help 显示帮助信息
+-Dproperty=value 设置属性值
+-server 服务端的模式启动
+-client 客户端的模式启动
+
+> 非标准参数(非标准参数是给HotSpot虚拟机使用的)
+
+-X 显示所有非标准参数
+
+*-Xmn*size 设置年轻代大小
+
+-Xmssize 设置堆初始化大小
+
+-Xmxsize 设置分配内存最大值
+
+-Xsssize 设置线程栈大小
+
+-Xnoclassgc 不进行垃圾回收
+
+-Xprof 打印运行记录，在开发环境有用
+
+-XshowSettings:category 显示配置项*
+
+> 高级运行参数
+
+-XX:ThreadStackSize=*size 设置线程栈大小*
+
+> 高级编译参数
+
+> 高级垃圾回收参数
+
+

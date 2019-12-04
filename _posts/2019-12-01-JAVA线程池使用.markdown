@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "JAVA线程池使用"
+date:   2019-12-01 20:58:43 +0800
+categories: jekyll update
+---
+
+# JAVA线程池使用
+
+程序线性处理任务，无法充分利用计算机多核的能力。这时候可以用多进程能有效解决这个问题。高并发应用通常都会充分发挥多CPU的计算能力。线程模型的资源消耗更少，线程也是JAVA编程的标配，JVM也应用了很多，GC回收就是独立的线程进行的。
+
+线程使用不单容易造成JVM虚拟机资源的耗尽，超过系统对底层的限制也会造成OOM的问题，频繁创建线程的开销也非常大。
+
+```java
+Exception in thread "main" java.lang.OutOfMemoryError: unable to create new native thread
+at java.lang.Thread.start0(Native Method)
+at java.lang.Thread.start(Thread.java:714)
+```
+
+JVM可创建线程数受到分配的内存数影响，可以用-Xms -Xmx-Xmn 这几个参数调节，但也受到计算机关联配置的影响。
+
+所以任何不当的编程都会导致服务器的问题出现，自然java也为我们提供了有效的解决方案。
+
+## JAVA线程池框架
+
+Executors框架能直接调用静态构造方法创建配置好的线程池:
+
+1.创建单线程线程池，能确保存在一个线程
+
+```
+Executor singleThreadExecutor = Executors.newSingleThreadExecutor();
+```
+
+2.创建可缓存的线程池，任务超过线程数时，会回收空闲的线程
+
+```
+Executor cachedThreadPool = Executors.newCachedThreadPool();
+```
+
+3.创建固定线程数的线程池，任务超过线程数，线程规模也不会增加
+
+```
+Executor fixedThreadPool = Executors.newFixedThreadPool(10);
+```
+
+4.线程数等于CPU数，每个线程要处理分配队列中的任务，如果完成自己队列中的任务，那么它可以去其他线程中获取其他线程的任务去执行
+
+```
+Executor workStealingPool = Executors.newWorkStealingPool();
+```
+
+5.创建固定长度的线程池，以时间调度的方式执行
+
+```
+Executor scheduledThreadPool = Executors.newScheduledThreadPool(10);
+```
+
+6.创建单线程的线程池，以时间调度的方式执行
+
+```
+Executor singleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor();
+```
+
+虽然上述的预配置好的线程池能满足我们很大一部分需求，但可以通过 ThreadPoolExecutor 的构造函数进行定制实例化
+
+```
+public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue<Runnable> workQueue,
+                          ThreadFactory threadFactory,
+                          RejectedExecutionHandler handler)
+```
+
+
+
+

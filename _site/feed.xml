@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-04T19:30:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">java程序的调优和优化-JVM启动参数</title><link href="http://localhost:4000/jekyll/update/2019/12/02/JVM%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0.html" rel="alternate" type="text/html" title="java程序的调优和优化-JVM启动参数" /><published>2019-12-02T20:58:43+08:00</published><updated>2019-12-02T20:58:43+08:00</updated><id>http://localhost:4000/jekyll/update/2019/12/02/JVM%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/12/02/JVM%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0.html">&lt;p&gt;#java程序的调优和优化-JVM启动参数&lt;/p&gt;
+
+&lt;p&gt;java应启动，是通过启动JRE环境，加载指定的类，调用类的main函数，args的第一个参数通常是制定加载的类，或者如果-jar参数存在，就是JAR包的名称：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void main(String[] args)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;java命令参数支持许多种参数，可以分为一下几种类别：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;标准参数&lt;/li&gt;
+  &lt;li&gt;非标准参数&lt;/li&gt;
+  &lt;li&gt;高级运行时参数&lt;/li&gt;
+  &lt;li&gt;高级编译参数&lt;/li&gt;
+  &lt;li&gt;高级服务参数&lt;/li&gt;
+  &lt;li&gt;高级垃圾回收参数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;标准参数(是最经常使用的参数，所有的JVM实现都会支持)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-verbose:jni 打印原声方法调用信息学
+-verbose:gc 打印gc信息
+-verbose:class 打印类信息
+-jar filename 执行jar包程序
+-help 显示帮助信息
+-Dproperty=value 设置属性值
+-server 服务端的模式启动
+-client 客户端的模式启动&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;非标准参数(非标准参数是给HotSpot虚拟机使用的)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-X 显示所有非标准参数&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-Xmn&lt;/em&gt;size 设置年轻代大小&lt;/p&gt;
+
+&lt;p&gt;-Xmssize 设置堆初始化大小&lt;/p&gt;
+
+&lt;p&gt;-Xmxsize 设置分配内存最大值&lt;/p&gt;
+
+&lt;p&gt;-Xsssize 设置线程栈大小&lt;/p&gt;
+
+&lt;p&gt;-Xnoclassgc 不进行垃圾回收&lt;/p&gt;
+
+&lt;p&gt;-Xprof 打印运行记录，在开发环境有用&lt;/p&gt;
+
+&lt;p&gt;-XshowSettings:category 显示配置项*&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;高级运行参数&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-XX:ThreadStackSize=&lt;em&gt;size 设置线程栈大小&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;高级编译参数&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;高级垃圾回收参数&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">#java程序的调优和优化-JVM启动参数</summary></entry><entry><title type="html">JAVA线程池使用</title><link href="http://localhost:4000/jekyll/update/2019/12/01/JAVA%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BD%BF%E7%94%A8.html" rel="alternate" type="text/html" title="JAVA线程池使用" /><published>2019-12-01T20:58:43+08:00</published><updated>2019-12-01T20:58:43+08:00</updated><id>http://localhost:4000/jekyll/update/2019/12/01/JAVA%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BD%BF%E7%94%A8</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/12/01/JAVA%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BD%BF%E7%94%A8.html">&lt;h1 id=&quot;java线程池使用&quot;&gt;JAVA线程池使用&lt;/h1&gt;
+
+&lt;p&gt;程序线性处理任务，无法充分利用计算机多核的能力。这时候可以用多进程能有效解决这个问题。高并发应用通常都会充分发挥多CPU的计算能力。线程模型的资源消耗更少，线程也是JAVA编程的标配，JVM也应用了很多，GC回收就是独立的线程进行的。&lt;/p&gt;
+
+&lt;p&gt;线程使用不单容易造成JVM虚拟机资源的耗尽，超过系统对底层的限制也会造成OOM的问题，频繁创建线程的开销也非常大。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;thread&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;main&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OutOfMemoryError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;native&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;thread&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Native&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;714&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;JVM可创建线程数受到分配的内存数影响，可以用-Xms -Xmx-Xmn 这几个参数调节，但也受到计算机关联配置的影响。&lt;/p&gt;
+
+&lt;p&gt;所以任何不当的编程都会导致服务器的问题出现，自然java也为我们提供了有效的解决方案。&lt;/p&gt;
+
+&lt;h2 id=&quot;java线程池框架&quot;&gt;JAVA线程池框架&lt;/h2&gt;
+
+&lt;p&gt;Executors框架能直接调用静态构造方法创建配置好的线程池:&lt;/p&gt;
+
+&lt;p&gt;1.创建单线程线程池，能确保存在一个线程&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Executor singleThreadExecutor = Executors.newSingleThreadExecutor();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2.创建可缓存的线程池，任务超过线程数时，会回收空闲的线程&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Executor cachedThreadPool = Executors.newCachedThreadPool();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.创建固定线程数的线程池，任务超过线程数，线程规模也不会增加&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Executor fixedThreadPool = Executors.newFixedThreadPool(10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;4.线程数等于CPU数，每个线程要处理分配队列中的任务，如果完成自己队列中的任务，那么它可以去其他线程中获取其他线程的任务去执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Executor workStealingPool = Executors.newWorkStealingPool();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;5.创建固定长度的线程池，以时间调度的方式执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Executor scheduledThreadPool = Executors.newScheduledThreadPool(10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;6.创建单线程的线程池，以时间调度的方式执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Executor singleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;虽然上述的预配置好的线程池能满足我们很大一部分需求，但可以通过 ThreadPoolExecutor 的构造函数进行定制实例化&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue&amp;lt;Runnable&amp;gt; workQueue,
+                          ThreadFactory threadFactory,
+                          RejectedExecutionHandler handler)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">JAVA线程池使用</summary></entry></feed>
