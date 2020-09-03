@@ -3,6 +3,15 @@
 ## 云原生技术
 ### telepresence
 
+## 中间件技术
+### 缓存
+### 索引
+### 消息队列
+### 配置中心
+
+## 分布式应用框架
+
+## 接入层网关
 
 You can use the [editor on GitHub](https://github.com/sunze/myblog/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
