@@ -13,6 +13,9 @@
 
 ## 接入层网关
 
+## 开发注意事项
+* 数字的更新操作不能用set操作，应该用原子性的incr操作，mysql和redis都有使用场景 
+
 You can use the [editor on GitHub](https://github.com/sunze/myblog/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
