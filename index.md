@@ -2,6 +2,12 @@
 
 ## 云原生技术
 ### telepresence
+### Kubernetes
+> kubernetes的网络访问机制
+k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
+* NodePort
+* 
+* 
 
 ## 中间件技术
 ### 缓存
