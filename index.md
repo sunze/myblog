@@ -4,6 +4,11 @@
 ### telepresence
 ### Kubernetes
 Kubernetes核心是对Pod对控制
+> kubernetes的健康检查
+* HTTP GET获取POD状态
+* TCP Socket状态检查
+* 自定义检查
+
 > kubernetes的网络访问机制
 k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
 * NodePort
