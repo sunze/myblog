@@ -3,23 +3,31 @@
 ## 云原生技术
 ### telepresence
 ### Kubernetes
+Kubernetes核心是对Pod对控制
 > kubernetes的网络访问机制
 k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
 * NodePort
 * 
 * 
 
-## 中间件技术
-### 缓存
-### 索引
-### 消息队列
-### 配置中心
+> kubernetes的无状态控制器
+* ReplicationController
 
 ## 分布式应用框架
 ###Dubbo
 ###SpringCloud
 
+## 中间件技术
+### 缓存
+### 索引
+### 消息队列
+### 配置中心
+### 分布式文件系统
+
 ## 接入层网关
+
+## 网络协议
+###HTTP/HTTP2/HTTP3
 
 ## 技术理念
 ### 分布式和高并发
