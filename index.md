@@ -1,5 +1,5 @@
 # 一夜技术博客
-**拆解基数书籍**
+**拆解技术书籍**
 ## 云原生技术
 ### telepresence
 ### Kubernetes
@@ -16,9 +16,12 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 * 
 
 > kubernetes的无状态控制器
-* ReplicationController(Pod模版, 标签选择，Pod数)[已废弃]
-* ReplicaSets
+* ReplicationController[已废弃]
+* ReplicaSets(Pod模版, 标签选择，Pod数)
 * DaemonSet(一个Node一个Pod)
+* Job/CronJob
+> kubernetes的有状态控制器
+> kubernetes的自定义控制器
 
 ## 分布式应用框架
 ###Dubbo
