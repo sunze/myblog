@@ -24,8 +24,8 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 > kubernetes的自定义控制器
 
 ## 分布式应用框架
-###Dubbo
-###SpringCloud
+### Dubbo
+### SpringCloud
 
 ## 中间件技术
 ### 缓存
