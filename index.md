@@ -7,7 +7,7 @@ Kubernetes核心是对Pod对控制
 > kubernetes的健康检查
 * HTTP GET获取POD状态
 * TCP Socket状态检查
-* 自定义检查
+* Exec 命令方式 
 
 > kubernetes的网络访问机制
 k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
@@ -16,7 +16,9 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 * 
 
 > kubernetes的无状态控制器
-* ReplicationController
+* ReplicationController(Pod模版, 标签选择，Pod数)[已废弃]
+* ReplicaSets
+* DaemonSet(一个Node一个Pod)
 
 ## 分布式应用框架
 ###Dubbo
@@ -27,7 +29,9 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 ### 索引
 ### 消息队列
 ### 配置中心
-### 分布式文件系统
+### 分布式任务框架
+### 分布式存储方案
+Minlo
 
 ## 接入层网关
 
