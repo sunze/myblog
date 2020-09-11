@@ -9,6 +9,11 @@ Kubernetes核心是对Pod对控制
 * TCP Socket状态检查
 * Exec 命令方式 
 
+> kubernetes的services
+k8s的pod的ip是可变不固定的，多pod的ip也不同，需要service作为固定唯一的访问入口
+集群内部对service的ip访问:环境变量和FQDN
+集群外部对service的ip访问
+
 > kubernetes的网络访问机制
 k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
 * NodePort
@@ -26,20 +31,25 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 ## 分布式应用框架
 ### Dubbo
 ### SpringCloud
+### Spring,SpringMvc,SpringBoot
+作为知名的MVC框架，随着前后端分离的持续推进，越来越多应用不再使用MVC的模式, 主要原因是模版渲染不再被使用
 
 ## 中间件技术
 ### 缓存
 ### 索引
 ### 消息队列
 ### 配置中心
+### 数据库中间件
 ### 分布式任务框架
 ### 分布式存储方案
+### 唯一ID生成服务
+### 告警系统
 Minlo
 
 ## 接入层网关
 
 ## 网络协议
-###HTTP/HTTP2/HTTP3
+### HTTP/HTTP2/HTTP3
 
 ## 设计模式
 ### 代理模式
