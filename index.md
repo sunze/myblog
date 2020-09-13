@@ -11,8 +11,8 @@ Kubernetes核心是对Pod对控制
 
 > kubernetes的services
 k8s的pod的ip是可变不固定的，多pod的ip也不同，需要service作为固定唯一的访问入口
-集群内部对service的ip访问:环境变量和FQDN
-集群外部对service的ip访问
+集群内部service访问:添加selector, 环境变量和FQDN
+集群外部service访问:不指定selector, 创建endpoints资源关联外部集群外部服务ip:port
 
 > kubernetes的网络访问机制
 k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
@@ -33,6 +33,9 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 ### SpringCloud
 ### Spring,SpringMvc,SpringBoot
 作为知名的MVC框架，随着前后端分离的持续推进，越来越多应用不再使用MVC的模式, 主要原因是模版渲染不再被使用
+
+## 数据库
+数据库作为持久方式，是提供有状态的服务，数据库的底层还是用文件的形式实现
 
 ## 中间件技术
 ### 缓存
