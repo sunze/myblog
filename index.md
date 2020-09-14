@@ -4,21 +4,32 @@
 ### telepresence
 ### Kubernetes
 Kubernetes核心是对Pod对控制
-> kubernetes的健康检查
+> kubernetes的pod健康检查(liveness probees)
 * HTTP GET获取POD状态
 * TCP Socket状态检查
 * Exec 命令方式 
+> kubernetes的pod准备检查(readiness probe)
+* HTTP GET获取POD状态
+* TCP Socket状态检查
+* Exec 命令方式
 
 > kubernetes的services
 k8s的pod的ip是可变不固定的，多pod的ip也不同，需要service作为固定唯一的访问入口
 集群内部service访问:添加selector, 环境变量和FQDN
 集群外部service访问:不指定selector, 创建endpoints资源关联外部集群外部服务ip:port
 
-> kubernetes的网络访问机制
-k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
+> kubernetes的外网访问机制
+k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问需要固定的ip入口，外网访问k8s的机制有一下几种
 * NodePort(重定向外部请求包到service,可以通过node的ip访问service)
 * LoadBalancer(NodePort的扩展类型) 
 * Ingress(HTTP网络层) 
+
+> kubernetes的服务访问异常排查
+1. 集群内部访问服务集群IP
+2. 确保pod的健康检查是OK的
+3. 确认pod是服务的一部分，检查服务的endpoint
+4. 通过FQDN访问确保是正确的
+5. 确认你连接的是服务的port而部署目标port
 
 > kubernetes的无状态控制器
 * ReplicationController[已废弃]
@@ -27,6 +38,14 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 * Job/CronJob
 > kubernetes的有状态控制器
 > kubernetes的自定义控制器
+
+> kubernetes的volumn
+用来挂载持久化的数据
+* emptyDir在pod的容器中共享，pod删除后一起消失
+* hostpath在node节点上的目录
+* gitRepo获取git内容
+* PVC屏蔽了PV的多样性，提供了一致的接口
+
 
 ## 分布式应用框架
 ### Dubbo
