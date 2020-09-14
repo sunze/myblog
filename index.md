@@ -16,7 +16,7 @@ k8s的pod的ip是可变不固定的，多pod的ip也不同，需要service作为
 
 > kubernetes的网络访问机制
 k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网访问k8s的机制有一下几种
-* NodePort(重定向外部包到service)
+* NodePort(重定向外部请求包到service,可以通过node的ip访问service)
 * LoadBalancer(NodePort的扩展类型) 
 * Ingress(HTTP网络层) 
 
