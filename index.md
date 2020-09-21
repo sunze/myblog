@@ -46,11 +46,12 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 * hostpath在node节点上的目录
 * gitRepo获取git内容
 * PVC屏蔽了PV的多样性，提供了一致的接口
-动态数据传递, 配置和密码将动态的数据从镜像抽离出来，减少不必要的镜像重构和维护
-* 命令行
-* 环境变量
+动态数据传递, 命令行和环境变量无法避免去修改k8s的pod资源文件, 配置和密码将动态的数据从镜像抽离出来，减少不必要的镜像重构和维护
+* 命令行command和args
+* 环境变量env
 * ConfigMap
 * Secrets
+用来存储敏感信息，不会落磁盘文件
 
 > kubernetes的应用
 kubernetes用四种资源组成一个应用（workloads, loadbalance, service, volumes)
@@ -87,6 +88,9 @@ CMD在启动运行容器时执行，可以在docker run时覆盖执行命令
 ### 告警系统
 Minlo
 
+## 代码库
+### JSON和XML解析
+
 ## 接入层网关
 
 ## 网络协议
@@ -102,7 +106,8 @@ Minlo
 > CPU使用率
 因为我们强调的是应用性能，所以系统态CPU使用率越低越好
 > 网络IO
-> 磁盘IO
+> 磁盘IO,空间
+空间的使用情况
 > 内存使用率
 > 锁竞争
 
