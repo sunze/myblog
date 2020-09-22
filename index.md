@@ -50,6 +50,9 @@ k8s尽开放了pod间的相互访问，pod的ip对外部是不可见的，外网
 * 命令行command和args
 * 环境变量env
 * ConfigMap
+ConfigMap用键值的方式保存配置, 可以通过字面量设置，可以读取文件设置, 也可以读取文件夹设置
+ConfigMap可以作为容器环境变量读取,也可以作为文件挂载到容器 
+ConfigMap的修改会更新到容器里面，避免了容器的重新启动
 * Secrets
 用来存储敏感信息，不会落磁盘文件
 
@@ -125,6 +128,12 @@ Minlo
 ## 开发注意事项
 * 数字的更新操作不能用set操作，应该用原子性的incr操作，mysql和redis都有使用场景 
 
+### 个人情况
+
+没什么想说的
+
+
+
 
 ### Markdown
 
@@ -151,7 +160,4 @@ Syntax highlighted code block
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 
-### 个人情况
-
-没什么想说的
 
