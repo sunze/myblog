@@ -3,6 +3,24 @@
 ## 云原生技术
 ### telepresence
 ### Kubernetes
+
+Kubernetes组成
+> Master节点组件控制节点，主节点，负责管理集群状态
+* etcd配置存储
+* API服务器
+* 调度器
+* 控制器管理器
+> Node节点的组件, 运行在工作node上
+* Kubelete 管理pod
+* kube-proxy 网络通信和负载
+* 运行容器 
+> 附加组件
+* Kubernetes的DNS服务器
+* 控制台
+* Ingress控制器
+* 监控工具
+* 容器网络插件
+
 Kubernetes核心是对Pod对控制
 > kubernetes的pod健康检查(liveness probees)
 * HTTP GET获取POD状态
@@ -84,6 +102,8 @@ CMD在启动运行容器时执行，可以在docker run时覆盖执行命令
 ### 索引
 ### 消息队列
 ### 配置中心
+配置中心将常变的数据从代码中抽离出来， 不再依赖于应用的重新发布，但也会造成配置的更新不再和应用发布同步, 
+可以通过配置新的键值来同步发布配置
 ### 数据库中间件
 ### 分布式任务框架
 ### 分布式存储方案
