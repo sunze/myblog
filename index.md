@@ -20,6 +20,8 @@ Kubernetes组成
 * Ingress控制器
 * 监控工具
 * 容器网络插件
+Kubernetes架构图
+![Image](src)
 
 Kubernetes核心是对Pod对控制
 > kubernetes的pod健康检查(liveness probees)
@@ -147,6 +149,18 @@ Minlo
 
 ## 开发注意事项
 * 数字的更新操作不能用set操作，应该用原子性的incr操作，mysql和redis都有使用场景 
+## Java开发规范
+> 空指针异常
+* 字符串常量作为equal调用方，能避免nullpoint
+## Java开发工具
+> IDEA开发插件
+- 阿里巴巴编码规范插件安装
+- lombok插件配置
+- mybatis插件Free-idea-mybatis安装
+- Rainbow Brackets （括号高亮）插件安装
+
+
+
 
 ### 个人情况
 
