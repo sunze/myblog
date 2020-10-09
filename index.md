@@ -25,7 +25,7 @@ SPI全称Service Provider Interface，是Java提供的一套用来被第三方�
 3. 如 SPI 的实现类为 Jar 则需要放在主程序 ClassPath 中
 4. API 具体实现类必须有一个不带参数的构造方法
 
-###服务接口类
+### 服务接口类
 ```java
 package com.sz.spi;
 /**
@@ -41,7 +41,7 @@ public interface Log {
     void info(String str);
 }
 ```
-###实现类
+### 实现类
 ```java
 package com.sz.impl;
 import com.sz.spi.Log;
@@ -55,9 +55,8 @@ public class TestLog implements Log {
         System.out.println("Test:" + s);
     }
 }
-
 ```
-###实现类
+### 实现类
 ```java
 package com.sz.impl;
 import com.sz.spi.Log;
@@ -73,7 +72,7 @@ public class DevLog implements Log {
     }
 }
 ```
-###测试类
+### 测试类
 ```java
 package com.sz;
 import com.sz.spi.Log;
