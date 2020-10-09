@@ -24,7 +24,8 @@ SPI全称Service Provider Interface，是Java提供的一套用来被第三方�
 2. 使用ServiceLoader类动态加载 META-INF 中的实现类
 3. 如 SPI 的实现类为 Jar 则需要放在主程序 ClassPath 中
 4. API 具体实现类必须有一个不带参数的构造方法
-```SPI代码实现
+
+```java
 package com.sz.spi;
 
 /**
@@ -39,7 +40,7 @@ public interface Log {
      */
     void info(String str);
 }
-
+```
 
 package com.sz.impl;
 
