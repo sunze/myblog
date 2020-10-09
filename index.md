@@ -11,12 +11,96 @@ Writer和Reader是面向字符集的输入输出
 NIO是基于通道和缓冲区的形式进行数据处理的，NIO是双向的
 NIO和组成Buffer和Channel
 
+
+## Java标准库:集合类
 ## Java标准库:网络net
 ## Java标准库:并发current
 ## Java标准库:工具util
 
 ## Java Spi, Spring Spi, Dubbo Spi
 SPI全称Service Provider Interface，是Java提供的一套用来被第三方实现或者扩展的接口，它可以用来启用框架扩展和替换组件
+只要按照SPI的约定编写接口和对应实现类和配置文件，就能自动加载对应的服务提供实现
+1. 在META-INF/services/ 目录中创建以接口全限定名命名的文件，该文件内容为API具体实现类的全限定名
+2. 使用ServiceLoader类动态加载 META-INF 中的实现类
+3. 如 SPI 的实现类为 Jar 则需要放在主程序 ClassPath 中
+4. API 具体实现类必须有一个不带参数的构造方法
+```SPI代码实现
+package com.sz.spi;
+
+/**
+ * @author sunze
+ * @date 2020/10/9
+ */
+public interface Log {
+
+    /**
+     * 打印日志信息
+     * @param str
+     */
+    void info(String str);
+}
+
+
+package com.sz.impl;
+
+import com.sz.spi.Log;
+
+/**
+ * @author sunze
+ * @date 2020/10/9
+ */
+public class TestLog implements Log {
+    @Override
+    public void info(String s) {
+        System.out.println("Test:" + s);
+    }
+}
+
+
+package com.sz.impl;
+
+import com.sz.spi.Log;
+
+/**
+ * @author sunze
+ * @date 2020/10/9
+ */
+public class DevLog implements Log {
+    @Override
+    public void info(String s) {
+        System.out.println("Test:" + s);
+    }
+}
+
+
+package com.sz;
+
+import com.sz.spi.Log;
+
+import java.util.Iterator;
+import java.util.ServiceLoader;
+
+/**
+ * @author sunze
+ * @date 2020/10/9
+ */
+public class SpiTest {
+
+    public static void main(String[] args) {
+
+        ServiceLoader<Log> peoples = ServiceLoader.load(Log.class);
+        Iterator<Log> iterator = peoples.iterator();
+        while (iterator.hasNext()) {
+            Log log = iterator.next();
+            log.info("hellow wolrd");
+        }
+    }
+
+
+}
+
+
+
 
 ## Java原生调用
 
@@ -160,10 +244,11 @@ Minlo
 ### 开放封闭原则OCP（对扩展开放，对修改封闭）
 是所有面向对象原则的核心, 软件设计本身所追求的目标就是封装变化、降低耦合，而开放封闭原则正是对这一目标的最直接体现.
 ### 代理模式
-代理模式被使用来实现对象的访问控制
+代理模式被使用来实现对象的访问控制, 对调用方隐藏真正的对象
 ### 装饰者模式
 装饰者模式实现了对象的增强, 和基础对象拥有一样的方法，持有基础对象，同名方法在调用基础对象后会做额外的行为。
 Java I/O包就使用了这个设计模式
+### 门面模式
 
 ## 性能优化
 性能优化要从监控，分析，调优三个方面入手
