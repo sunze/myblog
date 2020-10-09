@@ -15,7 +15,8 @@ NIO和组成Buffer和Channel
 ## Java标准库:并发current
 ## Java标准库:工具util
 
-## Java Spi
+## Java Spi, Spring Spi, Dubbo Spi
+SPI全称Service Provider Interface，是Java提供的一套用来被第三方实现或者扩展的接口，它可以用来启用框架扩展和替换组件
 
 ## Java原生调用
 
@@ -30,7 +31,7 @@ NIO和组成Buffer和Channel
 | 进程间通信       | 网络间通信         |
 | 资源管控能力有限 | 统一的资源管控     |
 | 文件系统         | PV/PVC             |
-| 计算能力有限     | 计算能力理论上无线 |
+| 计算能力有限     | 计算能力理论上无限 |
 | 单机硬件         | 集群机器           |
 
 ### telepresence
@@ -208,10 +209,9 @@ web架构演化至今已经形成了多层架构的模式，网络代理在其�
 
 
 ### 个人情况
-- 系统：linux
+- 系统：linux、kubernetes
 - 语言：PHP、Java、Golang
 
-没什么想说的
 
 
 
