@@ -27,7 +27,6 @@ SPI全称Service Provider Interface，是Java提供的一套用来被第三方�
 
 ```java
 package com.sz.spi;
-
 /**
  * @author sunze
  * @date 2020/10/9
@@ -42,10 +41,9 @@ public interface Log {
 }
 ```
 
+```java
 package com.sz.impl;
-
 import com.sz.spi.Log;
-
 /**
  * @author sunze
  * @date 2020/10/9
@@ -57,9 +55,10 @@ public class TestLog implements Log {
     }
 }
 
+```
 
+```java
 package com.sz.impl;
-
 import com.sz.spi.Log;
 
 /**
@@ -69,15 +68,14 @@ import com.sz.spi.Log;
 public class DevLog implements Log {
     @Override
     public void info(String s) {
-        System.out.println("Test:" + s);
+        System.out.println("Dev:" + s);
     }
 }
+```
 
-
+```java
 package com.sz;
-
 import com.sz.spi.Log;
-
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
@@ -86,9 +84,7 @@ import java.util.ServiceLoader;
  * @date 2020/10/9
  */
 public class SpiTest {
-
     public static void main(String[] args) {
-
         ServiceLoader<Log> peoples = ServiceLoader.load(Log.class);
         Iterator<Log> iterator = peoples.iterator();
         while (iterator.hasNext()) {
@@ -96,9 +92,11 @@ public class SpiTest {
             log.info("hellow wolrd");
         }
     }
-
-
 }
+```
+运行结果：
+Test:hellow wolrd
+Dev:hellow wolrd
 
 
 
